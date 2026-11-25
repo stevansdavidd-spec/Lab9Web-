@@ -1,0 +1,9 @@
+Options -Indexes
+RewriteEngine On
+
+# File dan direktori fisik tetap dilayani secara langsung.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# URL /Lab9Web/user/list diarahkan ke router.
+RewriteRule ^(.+)$ index.php?page=$1 [QSA,L]
